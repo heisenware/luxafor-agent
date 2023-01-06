@@ -99,7 +99,6 @@ class Luxafor {
   static _write (command, target, color, options = []) {
     const [r, g, b] = parseColor(color).rgb
     const data = [command, target, r, g, b, ...options]
-    console.log('data', data)
     Luxafor._writeRaw(data)
   }
 
