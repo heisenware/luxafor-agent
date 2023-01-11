@@ -128,7 +128,7 @@ class Luxafor {
   static _getDevice () {
     if (!Luxafor._device) {
       const path = HID.devices()
-        .filter(({ product }) => product.startsWith('LUXAFOR'))
+        .filter(({ product }) => product && product.startsWith('LUXAFOR'))
         .map(({ path }) => path)[0]
       Luxafor._device = path ? new HID.HID(path) : null
       if (Luxafor._device) Luxafor._device.pause()
